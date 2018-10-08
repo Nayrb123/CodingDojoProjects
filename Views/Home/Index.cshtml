@@ -1,0 +1,40 @@
+@using quoting_dojo.Models
+@model Quote
+<html>
+    <head>
+        <title>Quoting Dojo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            h1 {
+                text-align: center;
+                margin: 20px;
+            }
+            .container {
+                width:900px
+            }
+        
+        </style>
+    </head>
+
+<body>
+<h1>Welcome to QuotingDojo!</h1>
+<div class="container">
+    <form asp-action="create" asp-controller="Home" method="POST">
+        <div class ="form-row">
+            <div class="form-group col-md-6 mx-auto">
+                <label>Your Name</label>
+                <span asp-validation-for="user"></span>
+                <input class="form-control" asp-for="user">
+            </div>
+        </div>
+        <div class="form-group col-md-6 mx-auto">
+            <label>Your Quote</label>
+            <span asp-validation-for="user"></span>
+            <textarea class="form-control" rows="4" asp-for="quote"></textarea>
+            <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+    </form>
+        <a href="/quotes">Skip to Quotes</a>
+        </div>
+</div>
+</body>
+</html>
